@@ -1,4 +1,4 @@
-# nomadcoders_JS_Challenge
+# Hacker News - Renewal
 
 </br>
 
@@ -9,7 +9,8 @@
 사용한 기술은 React, Redux, Scss, Ajax, LocalStorage
 
 </br>
-[프로젝트 체험하기](https://wonhee418.github.io/nomadcoders_JS_Challenge/)
+[프로젝트 체험하기](https://wonhee418.github.io/HackerNews_Renewal
+/)
 </br>
 
 # 💻 프로젝트 구현내용
@@ -28,6 +29,7 @@
 
 # 🖼 프로젝트 이미지
 
+<!--
 <span>**로그인 화면**</span>
 ![img03](https://user-images.githubusercontent.com/66175249/177054562-35dab496-c664-4bc9-b65e-2e51d99ecfc3.png)
 
@@ -39,4 +41,4 @@
 </br>
 
 <span>**다크 모드**</span>
-![img02](https://user-images.githubusercontent.com/66175249/177054561-0056fff7-a113-456e-9a05-107d50df0e27.png)
+![img02](https://user-images.githubusercontent.com/66175249/177054561-0056fff7-a113-456e-9a05-107d50df0e27.png) -->
