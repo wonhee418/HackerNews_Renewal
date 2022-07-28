@@ -1,0 +1,122 @@
+$commentColor: #f6f6ef;
+$mainColor: #ff6600;
+
+.content {
+  padding: 60px 20px;
+
+  color: #232323;
+
+  .info {
+    font-size: 16px;
+    padding-bottom: 14px;
+    span {
+      padding-right: 30px;
+    }
+    span:first-child {
+      cursor: pointer;
+    }
+    span:last-child {
+      padding-right: 0;
+    }
+    svg path {
+      fill: $mainColor;
+    }
+  }
+
+  .tit {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 34px;
+    p {
+      font-size: inherit;
+    }
+    span {
+      font-size: 10px;
+      font-weight: 500;
+      color: #767676;
+      a {
+        color: #767676;
+        font-size: inherit;
+      }
+      svg {
+        font-size: inherit;
+
+        path {
+          fill: $mainColor;
+        }
+      }
+    }
+  }
+
+  .desc {
+    font-size: 16px;
+    border-top: 1px solid #e8e8e9;
+    padding-top: 14px;
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+.commentBox {
+  box-shadow: rgba($color: #000, $alpha: 0.2) 0px 2px 4px 0px;
+  border-radius: 15px;
+  background: $commentColor;
+  margin-bottom: 20px;
+  padding: 14px;
+  padding-bottom: 20px;
+
+  .commentNoti {
+    padding-bottom: 14px;
+    font-size: 18px;
+    svg {
+      font-size: 18px;
+    }
+  }
+  .noti {
+    font-size: 16px;
+  }
+
+  .commentWrap {
+    padding-bottom: 18px;
+    .user {
+      padding-left: 14px;
+      padding-bottom: 10px;
+      font-size: 12px;
+      span {
+        padding-right: 14px;
+      }
+
+      span:first-child {
+        cursor: pointer;
+      }
+    }
+    .comment {
+      box-shadow: rgba($color: #000, $alpha: 0.2) 0px 2px 4px 0px;
+      border-radius: 15px;
+      background: #fff;
+      padding: 14px;
+      a {
+        font-size: inherit;
+        color: #000;
+      }
+    }
+  }
+
+  .Re {
+    .replyMark {
+      svg path {
+        transform: rotateX(180deg) translate(-400px, -520px);
+        fill: $mainColor;
+      }
+    }
+  }
+  P {
+    font-size: 14px;
+  }
+
+  svg path {
+    fill: $mainColor;
+  }
+}

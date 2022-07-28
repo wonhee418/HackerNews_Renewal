@@ -1,0 +1,108 @@
+$itemColor: #f6f6ef;
+$mainColor: #ff6600;
+
+svg path {
+  transition: all 0.3s;
+  fill: #232323;
+}
+
+.inner {
+  h2 {
+    font-size: 22px;
+    color: #444;
+    padding: 30px 20px;
+  }
+}
+
+.itemWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  padding-bottom: 50px;
+  .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    border-radius: 5px;
+    width: calc(1200px / 2 - 50px);
+    margin: 12px;
+    box-shadow: rgba($color: #000, $alpha: 0.14) 0px 3px 8px 0px;
+    padding: 12px;
+    margin-bottom: 20rem;
+    background: #fff;
+    transition: all 0.3s;
+
+    .number {
+      color: $mainColor;
+      font-size: 14px;
+    }
+
+    .profile {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .tit {
+      min-height: 140rem;
+      padding-bottom: 14rem;
+      a {
+        font-size: 16px;
+        line-height: 1.2;
+        // color: #000;
+      }
+    }
+    .statusBox {
+      display: flex;
+      justify-content: flex-start;
+      border-top: 1px solid #e8e8e9;
+      padding-top: 8px;
+      transition: all 0.3s;
+
+      span {
+        font-size: 14px;
+        margin-right: 18rem;
+      }
+      span:last-child {
+        cursor: pointer;
+      }
+    }
+  }
+  .item:hover {
+    background: $itemColor;
+    .statusBox {
+      border-color: $mainColor;
+    }
+    svg path {
+      fill: $mainColor;
+    }
+  }
+}
+
+.Dark {
+  svg path {
+    transition: all 0.3s;
+    fill: #fff;
+  }
+
+  .item {
+    background: rgb(47, 50, 53);
+  }
+  a {
+    color: #fff;
+  }
+}
+
+@media (max-width: 1024px) {
+  .itemWrap .item .tit a {
+    font-size: 14px;
+  }
+  .itemWrap .item .statusBox span {
+    font-size: 12px;
+  }
+}
