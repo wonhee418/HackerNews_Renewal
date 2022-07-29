@@ -1,15 +1,10 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-import { useState } from "react";
-
-// https://hacker-news.firebaseio.com/v0/newstories.json
 
 const NEWS_URL = "https://api.hnpwa.com/v0/news/1.json";
 const NEWEST_URL = "https://api.hnpwa.com/v0/newest/1.json";
 const ASK_URL = "https://api.hnpwa.com/v0/ask/1.json";
 const SHOW_URL = "https://api.hnpwa.com/v0/show/1.json";
 const JOB_URL = "https://api.hnpwa.com/v0/jobs/1.json";
-
-// https://prac-interview.shop/room/all
 
 const ajax = new XMLHttpRequest();
 

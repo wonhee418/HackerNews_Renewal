@@ -5,6 +5,7 @@ import Ask from "./pages/ask.js";
 import Detail from "./pages/detail.js";
 import Show from "./pages/show.js";
 import Job from "./pages/job.js";
+import Error from "./pages/error.js";
 import { GlobalStyle } from "./style/GlobalStyle.js";
 import "./App.css";
 import "./style/darkStyle.scss";
@@ -25,7 +26,7 @@ function App() {
         <Route path="/show" element={<Show />} />
         <Route path="/job" element={<Job />} />
         <Route path="/detail/*" element={<Detail />} />
-        <Route path="*" element={<div>404페이지</div>} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );

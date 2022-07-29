@@ -150,7 +150,7 @@ function Reply({ comment, i, setModal, setUsername, setComment }) {
             setModal(true);
           }
           return (
-            <div className={`commentWrap mgL${(i + 1) * 40} Re`} key={i}>
+            <div className={`commentWrap mgL${(i + 1) * 20} Re`} key={i}>
               <i className="replyMark">
                 <FontAwesomeIcon icon={faShare} />
               </i>
