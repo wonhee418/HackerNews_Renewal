@@ -9,22 +9,10 @@ import Banner from "../components/Banner.js";
 
 function ShowPage() {
   let getData = useSelector((state) => state.show);
-  // let [getShowData, setGetShowData] = useState(showData(1));
   let [username, setUsername] = useState("");
   let [modal, setModal] = useState(false);
   let pathname = window.location.pathname;
   let itemLen = getData.length;
-  // let [scroll, setScroll] = useState(1);
-
-  // function showData(key) {
-  //   ajax.open("GET", SHOW_URL.replace("@page", key), false);
-  //   ajax.send();
-  //   return JSON.parse(ajax.response);
-  // }
-
-  // useEffect(() => {
-  //   setGetShowData(showData(scroll));
-  // }, [scroll]);
 
   return (
     <>
@@ -42,9 +30,6 @@ function ShowPage() {
                 setUsername={setUsername}
                 setModal={setModal}
                 path={pathname}
-                // setGetShowData={setGetShowData}
-                // scroll={scroll}
-                // setScroll={setScroll}
               />
             );
           })}
