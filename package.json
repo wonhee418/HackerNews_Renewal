@@ -23,7 +23,7 @@
     "styled-reset": "^4.4.2",
     "swiper": "^8.3.1",
     "web-vitals": "^2.1.4",
-    "homepage": "https://wonhee418.github.io/HackerNews_Renewal/"
+    "homepage": "https://wonhee418.github.io/HackerNews_Renewal"
   },
   "scripts": {
     "start": "react-scripts start",
