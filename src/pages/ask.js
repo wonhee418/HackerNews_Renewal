@@ -5,10 +5,12 @@ import Item from "../components/Item.js";
 import Banner from "./../components/Banner.js";
 
 function AskPage() {
-  let getData = useSelector((state) => state.ask);
-  let [username, setUsername] = useState("");
-  let [modal, setModal] = useState(false);
-  let pathname = window.location.pathname;
+  const getData = useSelector((state) => state.ask);
+  const [itemList, setItemList] = useState(10);
+  const [username, setUsername] = useState("");
+  const [modal, setModal] = useState(false);
+  const pathname = window.location.pathname;
+  const itemLen = itemList;
 
   return (
     <>
@@ -16,7 +18,7 @@ function AskPage() {
       <div className="inner">
         <h2>AsK</h2>
         <div className="itemWrap">
-          {getData.map((a, i) => {
+          {getData.slice(0, itemList).map((a, i) => {
             return (
               <Item
                 getData={a}
@@ -25,6 +27,8 @@ function AskPage() {
                 setUsername={setUsername}
                 setModal={setModal}
                 path={pathname}
+                itemLen={itemLen}
+                setItemList={setItemList}
               />
             );
           })}

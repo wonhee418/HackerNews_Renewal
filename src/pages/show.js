@@ -8,11 +8,12 @@ import Banner from "../components/Banner.js";
 // const SHOW_URL = "https://api.hnpwa.com/v0/show/@page.json";
 
 function ShowPage() {
-  let getData = useSelector((state) => state.show);
-  let [username, setUsername] = useState("");
-  let [modal, setModal] = useState(false);
-  let pathname = window.location.pathname;
-  let itemLen = getData.length;
+  const getData = useSelector((state) => state.show);
+  const [itemList, setItemList] = useState(10);
+  const [username, setUsername] = useState("");
+  const [modal, setModal] = useState(false);
+  const pathname = window.location.pathname;
+  const itemLen = itemList;
 
   return (
     <>
@@ -20,16 +21,17 @@ function ShowPage() {
       <div className="inner">
         <h2>Show</h2>
         <div className="itemWrap">
-          {getData.map((a, i) => {
+          {getData.slice(0, itemList).map((a, i) => {
             return (
               <Item
                 getData={a}
-                itemLen={itemLen}
                 num={i}
                 key={a.id}
                 setUsername={setUsername}
                 setModal={setModal}
                 path={pathname}
+                itemLen={itemLen}
+                setItemList={setItemList}
               />
             );
           })}

@@ -6,10 +6,12 @@ import Item from "../components/Item.js";
 import Banner from "./../components/Banner.js";
 
 function Home() {
-  let getData = useSelector((state) => state.news);
-  let [username, setUsername] = useState("");
-  let [modal, setModal] = useState(false);
-  let pathname = window.location.pathname;
+  const getData = useSelector((state) => state.news);
+  const [itemList, setItemList] = useState(10);
+  const [username, setUsername] = useState("");
+  const [modal, setModal] = useState(false);
+  const pathname = window.location.pathname;
+  const itemLen = itemList;
 
   return (
     <>
@@ -27,6 +29,8 @@ function Home() {
                   setUsername={setUsername}
                   setModal={setModal}
                   path={pathname}
+                  itemLen={itemLen}
+                  setItemList={setItemList}
                 />
               );
             })}

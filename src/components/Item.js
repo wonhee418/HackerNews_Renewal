@@ -6,7 +6,7 @@ import {
   faCommentDots,
 } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { useInView } from "react-intersection-observer";
+import { InView, useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 
 const ajax = new XMLHttpRequest();
@@ -19,13 +19,17 @@ function Item({
   path,
   num,
   itemLen,
-  scroll,
-  setScroll,
+  setItemList,
 }) {
-  let navigate = useNavigate();
-  let ASK = getData.title.indexOf("Ask HN:");
-  let Tell = getData.title.indexOf("Tell HN:");
-  let number = String(num + 1).padStart(3, "0");
+  const navigate = useNavigate();
+  const ASK = getData.title.indexOf("Ask HN:");
+  const Tell = getData.title.indexOf("Tell HN:");
+  const number = String(num + 1).padStart(3, "0");
+  const [ref, inView] = useInView({
+    // 라이브러리 옵션
+    threshold: 0,
+    triggerOnce: true,
+  });
 
   function saveName() {
     function getProfile() {
@@ -37,56 +41,118 @@ function Item({
     setModal(true);
   }
 
+  useEffect(() => {
+    if (inView == true) {
+      setItemList(itemLen + 10);
+    }
+  }, [inView]);
+
   return (
     <>
-      <div className="item">
-        <div className="profile">
-          <span>
-            {path == "/HackerNews_Renewal/job" ? null : (
-              <FontAwesomeIcon icon={faUser} />
-            )}
-            {path == "/HackerNews_Renewal/job" ? null : (
-              <span onClick={saveName}>{getData.user}</span>
-            )}
-          </span>
-          <span className="number">{number}</span>
+      {itemLen == num + 1 ? (
+        <div className="item" ref={ref}>
+          <div className="profile">
+            <span>
+              asdasd
+              {path == "/HackerNews_Renewal/job" ? null : (
+                <FontAwesomeIcon icon={faUser} />
+              )}
+              {path == "/HackerNews_Renewal/job" ? null : (
+                <span onClick={saveName}>{getData.user}</span>
+              )}
+            </span>
+            <span className="number">{number}</span>
+          </div>
+          <div className="tit">
+            <a
+              href={
+                ASK >= 0 || Tell >= 0
+                  ? `/HackerNews_Renewal/detail/#${getData.id}`
+                  : getData.url
+              }
+              target={ASK >= 0 || Tell >= 0 ? "_self" : "_blank"}
+            >
+              {getData.title}
+            </a>
+          </div>
+          <div className="statusBox">
+            <span className="time">
+              <FontAwesomeIcon icon={faClock} />
+              {getData.time_ago}
+            </span>
+            <span className="like">
+              {path == "/HackerNews_Renewal/job" ? null : (
+                <FontAwesomeIcon icon={faThumbsUp} />
+              )}
+              {path == "/HackerNews_Renewal/job" ? null : `${getData.points}`}
+            </span>
+            <span
+              className="reple"
+              onClick={() => {
+                navigate(`/detail${path}/#${getData.id}`);
+              }}
+            >
+              {path == "/HackerNews_Renewal/job" ? null : (
+                <FontAwesomeIcon icon={faCommentDots} />
+              )}
+              {path == "/HackerNews_Renewal/job"
+                ? null
+                : `${getData.comments_count}`}
+            </span>
+          </div>
         </div>
-        <div className="tit">
-          <a
-            href={
-              ASK >= 0 || Tell >= 0 ? `/detail/#${getData.id}` : getData.url
-            }
-            target={ASK >= 0 || Tell >= 0 ? "_self" : "_blank"}
-          >
-            {getData.title}
-          </a>
+      ) : (
+        <div className="item">
+          <div className="profile">
+            <span>
+              {path == "/HackerNews_Renewal/job" ? null : (
+                <FontAwesomeIcon icon={faUser} />
+              )}
+              {path == "/HackerNews_Renewal/job" ? null : (
+                <span onClick={saveName}>{getData.user}</span>
+              )}
+            </span>
+            <span className="number">{number}</span>
+          </div>
+          <div className="tit">
+            <a
+              href={
+                ASK >= 0 || Tell >= 0
+                  ? `/HackerNews_Renewal/detail/#${getData.id}`
+                  : getData.url
+              }
+              target={ASK >= 0 || Tell >= 0 ? "_self" : "_blank"}
+            >
+              {getData.title}
+            </a>
+          </div>
+          <div className="statusBox">
+            <span className="time">
+              <FontAwesomeIcon icon={faClock} />
+              {getData.time_ago}
+            </span>
+            <span className="like">
+              {path == "/HackerNews_Renewal/job" ? null : (
+                <FontAwesomeIcon icon={faThumbsUp} />
+              )}
+              {path == "/HackerNews_Renewal/job" ? null : `${getData.points}`}
+            </span>
+            <span
+              className="reple"
+              onClick={() => {
+                navigate(`/detail${path}/#${getData.id}`);
+              }}
+            >
+              {path == "/HackerNews_Renewal/job" ? null : (
+                <FontAwesomeIcon icon={faCommentDots} />
+              )}
+              {path == "/HackerNews_Renewal/job"
+                ? null
+                : `${getData.comments_count}`}
+            </span>
+          </div>
         </div>
-        <div className="statusBox">
-          <span className="time">
-            <FontAwesomeIcon icon={faClock} />
-            {getData.time_ago}
-          </span>
-          <span className="like">
-            {path == "/HackerNews_Renewal/job" ? null : (
-              <FontAwesomeIcon icon={faThumbsUp} />
-            )}
-            {path == "/HackerNews_Renewal/job" ? null : `${getData.points}`}
-          </span>
-          <span
-            className="reple"
-            onClick={() => {
-              navigate(`/detail${path}/#${getData.id}`);
-            }}
-          >
-            {path == "/HackerNews_Renewal/job" ? null : (
-              <FontAwesomeIcon icon={faCommentDots} />
-            )}
-            {path == "/HackerNews_Renewal/job"
-              ? null
-              : `${getData.comments_count}`}
-          </span>
-        </div>
-      </div>
+      )}
     </>
   );
 }
