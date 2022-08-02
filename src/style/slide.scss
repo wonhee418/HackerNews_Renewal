@@ -1,0 +1,82 @@
+$itemColor: #f6f6ef;
+$mainColor: #ff6600;
+
+.topWrap {
+  padding-bottom: 50px;
+  p {
+    font-size: 16px;
+    padding-bottom: 30px;
+  }
+  .swiper {
+    box-shadow: rgba($color: #000, $alpha: 0.14) 0px 3px 8px 0px;
+    background: $itemColor;
+    border-radius: 14px;
+    padding: 50px 0;
+
+    .swiper-slide {
+      opacity: 0.7;
+      transition: all 0.3s;
+
+      .slideBg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 18px;
+
+        .slideItem {
+          width: 300px;
+          height: 300px;
+          background: #fff;
+          border-radius: 18px;
+          box-shadow: rgba($color: #000, $alpha: 0.14) 0px 3px 8px 0px;
+          transform: scale(0.8);
+          transition: all 0.3s;
+          padding: 12px 18px;
+
+          > div {
+            font-size: 14px;
+          }
+          .lank {
+            color: $mainColor;
+            font-size: 14px;
+          }
+
+          .point {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            padding-bottom: 20px;
+
+            svg {
+              height: 18px;
+            }
+          }
+          .title {
+            height: calc(100% - 74px);
+            a {
+              font-size: 20px;
+            }
+          }
+          .user span {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .swiper-slide-active {
+      transform: scale(1.2);
+      transition: all 0.3s;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      background: $mainColor;
+    }
+
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+      bottom: 20px;
+    }
+  }
+}

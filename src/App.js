@@ -9,6 +9,8 @@ import Error from "./pages/error.js";
 import { GlobalStyle } from "./style/GlobalStyle.js";
 import "./App.css";
 import "./style/darkStyle.scss";
+import "./style/item.scss";
+
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 

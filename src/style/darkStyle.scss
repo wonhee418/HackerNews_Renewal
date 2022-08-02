@@ -42,12 +42,12 @@ $shadow: rgba(
     fill: #fff;
   }
 
-  .item {
+  .itemWrap .item {
     background: rgb(47, 50, 53);
     box-shadow: $shadow;
   }
 
-  .item:hover {
+  .itemWrap .item:hover {
     background: $pointColor;
   }
 
@@ -75,6 +75,16 @@ $shadow: rgba(
             fill: #ff6600;
           }
         }
+      }
+    }
+  }
+
+  .topWrap .swiper {
+    background: $pointColor;
+    .slideBg {
+      .slideItem {
+        background: $background;
+        box-shadow: rgba($color: #fff, $alpha: 0.2) 0px 2px 20px 0px;
       }
     }
   }

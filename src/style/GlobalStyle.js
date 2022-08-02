@@ -150,7 +150,7 @@ span {
 .inner{
   max-width:1200px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .clearfix:before, .clearfix:after {
