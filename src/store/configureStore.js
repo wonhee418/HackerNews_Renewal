@@ -8,7 +8,6 @@ const JOB_URL = "https://api.hnpwa.com/v0/jobs/1.json";
 
 const ajax = new XMLHttpRequest();
 
-// console.log(CONTENT_ID);
 function newsData() {
   ajax.open("GET", NEWS_URL, false);
   ajax.send();

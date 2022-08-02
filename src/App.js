@@ -1,4 +1,5 @@
 import Header from "./components/Header.js";
+import FlotingBtn from "./components/FlotingBtn.js";
 import Home from "./pages/home.js";
 import Newest from "./pages/newest.js";
 import Ask from "./pages/ask.js";
@@ -30,6 +31,7 @@ function App() {
         <Route path="/detail/*" element={<Detail />} />
         <Route path="*" element={<Error />} />
       </Routes>
+      <FlotingBtn />
     </div>
   );
 }
