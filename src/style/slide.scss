@@ -29,7 +29,7 @@ $mainColor: #ff6600;
           background: #fff;
           border-radius: 18px;
           box-shadow: rgba($color: #000, $alpha: 0.14) 0px 3px 8px 0px;
-          transform: scale(0.8);
+          transform: scale(0.7);
           transition: all 0.3s;
           padding: 20px;
 
@@ -64,7 +64,7 @@ $mainColor: #ff6600;
       }
     }
     .swiper-slide-active {
-      transform: scale(1.2);
+      transform: scale(1.3);
       transition: all 0.3s;
       opacity: 1;
     }
