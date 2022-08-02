@@ -26,7 +26,6 @@ function Slide({ setUsername, setModal, getData, i }) {
     setUsername(getProfile());
     setModal(true);
   }
-  console.log(getData);
 
   return (
     <SwiperSlide>

@@ -58,7 +58,7 @@ function Home() {
           >
             {item.slice(0, 8).map((a, i) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={a.id}>
                   <Slide
                     setUsername={setUsername}
                     setModal={setModal}
