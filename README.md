@@ -10,7 +10,7 @@
 사용한 기술은 React, Redux, React-Router, JavaScript, Scss, Ajax 등을 이용하였습니다.
 </br>
 
-[프로젝트 체험하기](https://wonhee418.github.io/HackerNews_Renewal)
+[프로젝트 체험하기](https://hackernews-react-project.web.app/)
 </br>
 
 # 💻 프로젝트 구현내용
@@ -55,18 +55,3 @@
 이 두가지의 차이점으로는 observer는 불러온 리스트를 DOM에 계속 쌓아두어 1000개, 10000개 가 된다면 브라우저가 느려질 가능성이 있습니다. 그 반면에 react-window는 현재 화면에 보이는 리스트만 렌더링하여 보여주고, 기존의 리스트는 DOM에서 제거하기에 클라이언트에게 쾌적한 환경을 제공할 수 있게 됩니다.
 하지만 react-window는 비교적 무겁다는 단점이 있기에 이번 프로젝트에서는 30개라는 한정적인 데이터를 이용하므로 observer 라이브러리를 이용하여 구현하였습니다.
 </p>
-<!-- # 🖼 프로젝트 이미지 -->
-
-<!--
-<span>**로그인 화면**</span>
-![img03](https://user-images.githubusercontent.com/66175249/177054562-35dab496-c664-4bc9-b65e-2e51d99ecfc3.png)
-
-</br>
-
-<span>**라이트 모드**</span>
-![img01](https://user-images.githubusercontent.com/66175249/177054555-c79d1927-cf86-4b81-a565-a2e7321b3edd.png)
-
-</br>
-
-<span>**다크 모드**</span>
-![img02](https://user-images.githubusercontent.com/66175249/177054561-0056fff7-a113-456e-9a05-107d50df0e27.png) -->

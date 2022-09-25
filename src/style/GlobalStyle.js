@@ -142,6 +142,7 @@ table {
 }
 img {
   max-width: 100%;
+  object-fit: cover;
 }
 span {
   font: inherit;
